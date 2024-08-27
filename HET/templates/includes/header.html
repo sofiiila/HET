@@ -1,10 +1,28 @@
 {% load static %}
 <header>
+  <style>
+      @font-face {
+        font-family: 'het';
+        src: url('static/font/hetik.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .custom-font {
+        color: #424530;
+        font-family: 'het';
+        font-size: 20px;
+      }
+
+      .nav-link {
+        color: #424530;
+      }
+  </style>
   <nav class="navbar" style="background-color: #E09132">
     <div class="container">
       <a class="navbar-brand" href=" ">
-        <img src="{% static 'imgs/logo.png' %}" width="35" height="30" class="d-inline-block align-top" alt="">
-        <span style="color:#424530">Твой финансовый помощник</span>
+        <img src="{% static 'imgs/hetik.png' %}" width="40" height="40" class="d-inline-block align-center" alt="">
+        <span class="custom-font align-middle">Твой финансовый помощник</span>
       </a>
       <ul class="nav nav-pills">
         {% with request.resolver_match.view_name as view_name %}
