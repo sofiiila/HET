@@ -3,19 +3,28 @@
   <style>
       @font-face {
         font-family: 'het';
-        src: url('static/font/hetik.ttf') format('truetype');
+        src: url('static/font/Comfortaa-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
 
       .custom-font {
-        color: #424530;
+        color: #FFEFCD;
         font-family: 'het';
         font-size: 20px;
+        text-decoration: underline;
       }
 
       .nav-link {
         color: #424530;
+        font-size: 20px;
+        text-decoration: underline;
+
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+          color: #FFEFCD;
       }
   </style>
   <nav class="navbar" style="background-color: #E09132">
@@ -24,10 +33,10 @@
         <img src="{% static 'imgs/hetik.png' %}" width="40" height="40" class="d-inline-block align-center" alt="">
         <span class="custom-font align-middle">Твой финансовый помощник</span>
       </a>
-      <ul class="nav nav-pills">
+      <ul class="nav">
         {% with request.resolver_match.view_name as view_name %}
         {% if user.is_authenticated %}
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" href=" ">Новая запись</a>
         </li>
         <li class="nav-item">
@@ -40,11 +49,11 @@
           Пользователь: {{ user.username }}
         </li>
         {% else %}
-        <li class="nav-item">
-          <a class="nav-link link-light {% if view_name  == 'users:login' %}active{% endif %}" href="{% url 'authorization:login' %}">Войти</a>
+        <li class="nav-item custom-font">
+          <a class="nav-link link-light {% if view_name  == 'authorization:login' %}active{% endif %}" href="{% url 'authorization:login' %}">Войти</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link link-light {% if view_name  == 'users:signup' %}active{% endif %}" href="{% url 'authorization:signup' %}">Регистрация</a>
+        <li class="nav-item custom-font">
+          <a class="nav-link link-light {% if view_name  == 'authorization:signup' %}active{% endif %}" href="{% url 'authorization:signup' %}">Регистрация</a>
         </li>
         {% endif %}
         {% endwith %}

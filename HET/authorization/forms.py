@@ -4,6 +4,7 @@ from django import forms
 
 User = get_user_model()
 
+
 class CreationForm(UserCreationForm):
     password1 = forms.CharField(
         label='Пароль',
