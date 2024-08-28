@@ -8,9 +8,7 @@ def categories_form(request):
         if form.is_valid():
             form.save()
             return redirect('categories_form')
-        else:
-            form = CategoriesForm()
+    else:
+        form = CategoriesForm()
 
-        return render(request, 'categories/categories_form.html', {'form': form})
-
-
+    return render(request, 'categories/categories_form.html', {'form': form})

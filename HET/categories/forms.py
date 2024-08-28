@@ -4,10 +4,9 @@ from .models import Categories
 
 class CategoriesForm(forms.ModelForm):
     class Meta:
-        models = Categories
+        model = Categories
         fields = ['section', 'name']
         labels = {
             'section': 'Раздел',
             'name': 'Название',
         }
-
