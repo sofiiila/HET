@@ -12,3 +12,5 @@ def categories_form(request):
         form = CategoriesForm()
 
     return render(request, 'categories/categories_form.html', {'form': form})
+
+
