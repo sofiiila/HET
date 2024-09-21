@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CategoriesForm
+from src.o import Controller
 
 
 def categories_form(request):
@@ -14,3 +15,8 @@ def categories_form(request):
     return render(request, 'categories/categories_form.html', {'form': form})
 
 
+def category_list(request):
+    dod = Controller()
+    context = dod.render_categories_page(request)
+
+    return render(request,'o.html', context)
